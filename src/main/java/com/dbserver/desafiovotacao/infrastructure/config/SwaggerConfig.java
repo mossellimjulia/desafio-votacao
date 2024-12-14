@@ -1,4 +1,4 @@
-package com.dbserver.desafiovotacao.config;
+package com.dbserver.desafiovotacao.infrastructure.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
