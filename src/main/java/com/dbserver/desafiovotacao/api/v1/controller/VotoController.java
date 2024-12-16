@@ -26,7 +26,6 @@ public class VotoController {
             @ApiResponse(responseCode = "200", description = "Voto salvo com sucesso"),
             @ApiResponse(responseCode = "400", description = "Erro ao registrar voto. Associado já votou ou outro erro"),
             @ApiResponse(responseCode = "404", description = "Pauta ou Associado não encontrado")
-
     })
     @PostMapping
     public String salvarVoto(@RequestBody @Valid VotoInput votoInput) {
