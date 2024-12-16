@@ -84,3 +84,21 @@ Exemplos de retorno do serviço
 
 
 # desafio-votacao
+
+PRÉ-REQUISITOS E INSTRUÇÕES:
+
+- Java 17
+- Gradle
+- Para consultar todos os endpoints criados, quando a aplicação estiver rodando, acessar: http://localhost:8080/swagger-ui/index.html#/
+
+  VANTAGENS EM UTILIZAR VERSIONAMENTO DA API NA URL:
+
+  Clareza e transparência: Ao incluir "/v1" na URL da API, fica claro para os usuários que estão usando a versão 1 da API. Isso ajuda a evitar confusões e problemas que podem surgir quando diferentes versões da API estão disponíveis.
+
+Facilidade de manutenção: Ao usar o versionamento na URL, as diferentes versões da API são claramente separadas, o que torna mais fácil manter e atualizar cada versão individualmente.
+
+Controle de compatibilidade: O versionamento permite que os desenvolvedores controlem melhor a compatibilidade da API com diferentes clientes e aplicações. Novas funcionalidades e mudanças significativas podem ser implementadas em novas versões da API, sem afetar a funcionalidade existente para clientes que ainda dependem da versão anterior.
+
+Melhor documentação: Ao versionar a API, os desenvolvedores podem fornecer documentação clara e específica para cada versão, tornando mais fácil para os usuários entenderem as diferenças entre as versões e quais recursos estão disponíveis em cada uma delas.
+
+Suporte a múltiplos clientes: Quando uma API é usada por vários clientes e aplicações, o versionamento permite que cada cliente use a versão mais apropriada da API para suas necessidades específicas, sem afetar outros clientes ou a funcionalidade geral da API.
