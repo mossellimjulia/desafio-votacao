@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface AssociadoRepository extends JpaRepository<Associado, Long> {
-    Optional<Associado> findByCpf(String cpf);
+   Optional<Associado> findById(Long id);
 }

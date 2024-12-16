@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -16,9 +18,18 @@ public class Voto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Enumerated(EnumType.STRING)
-    private OpcaoVoto voto;
+    private String voto;
     @ManyToOne
     private Pauta pauta;
-    private Long associadoId;
+    @ManyToOne
+    @JoinColumn(name = "associado_id")
+    private Associado associado;
+
+    public boolean getVotoSim() {
+        return Objects.equals(voto, "sim");
+    }
+
+    public boolean getVotoNao() {
+        return Objects.equals(voto, "nao");
+    }
 }
