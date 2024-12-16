@@ -58,6 +58,8 @@ public class PautaController {
         return pautaService.abrirSessaoVotacao(pautaId, tempoAbertura);
     }
 
+    @Operation(summary = "Fechar sessão de votação",
+            description = "Fecha a sessão de votação da pauta pelo Id.")
     @PutMapping("/fechar-sessao/{pautaId}")
     public String fecharSessaoVotacao(@PathVariable Long pautaId) {
         return pautaService.fecharSessaoVotacao(pautaId);
