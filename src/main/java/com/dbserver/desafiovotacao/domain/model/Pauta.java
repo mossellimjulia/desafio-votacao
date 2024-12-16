@@ -1,6 +1,9 @@
 package com.dbserver.desafiovotacao.domain.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Pauta {
 
     @EqualsAndHashCode.Include
@@ -29,8 +33,8 @@ public class Pauta {
     @Column(nullable = false)
     private SituacaoPauta situacaoPauta;
 
-    @OneToMany(mappedBy = "pauta")
-    @Builder.Default
-    private List<Voto> votos = new ArrayList<>();
+    @OneToMany(mappedBy = "pauta", fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Voto> votos;
 
 }
